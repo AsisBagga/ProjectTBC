@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load bootstrap4 %}
+
+{% block content %}
+<div class="container" align="center">
+
+  <h2>Approve</h2>
+
+<div class="list-group">
+  {% for i in comedian_profiles %}
+  <a class="list-group-item list-group-item-action" href="{% url 'manage:fetch_comedian' pk=i.id %}">{{ i.firstname }} ID: {{ i.id }} </a>
+  <a type="button" href="{% url 'manage:approve_comedian' pk=i.id %}">Approve</a>
+  <a type="button" href="{% url 'manage:reject_comedian' pk=i.id %}">Reject</a>
+  <br>
+  {% endfor %}
+</div>
+<!-- See comment 6 -->
+</div>
+
+{% endblock %}

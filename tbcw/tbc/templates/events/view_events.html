@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load staticfiles %}
+
+
+{% block content %}
+  <h1 align="center">Hello</h1>
+<div class="container">
+
+<h5 align="center">Using Events values or Queryset</h5>
+  {% for i in events %}
+    {% for key, value in i.items %}
+    <table>
+    <tr>
+      <td>{{ key.title }}</td>
+      <td>{{ value }}</td>
+    {% endfor %}
+    </tr>
+    </table>
+    <br>
+  {% endfor %}
+<hr>
+<br>
+<h5 align="center">Using Events objects</h5>
+{% for i in eventsobj %}
+<table border="1px" align="center">
+  <tr align="center">
+    <th>Show Name</th>
+    <th>Genre</th>
+    <th>Language</th>
+    <th>Duration</th>
+    <th>Age Limit</th>
+    <th>Date and Time</th>
+    <th>Comedian's Firstname</th>
+    <th>Lastname</th>
+  </tr>
+  <tr align="center" >
+    <td>{{ i.show_name }}</td>
+    <td>{{ i.genre }}</td>
+    <td>{{ i.language }}</td>
+    <td>{{ i.duration }}</td>
+    <td>{{ i.age_limit }}</td>
+    <td>{{ i.date_time }}</td>
+    {% for comedian in i.comedians.all %}
+      <td>{{comedian.firstname}}</td>
+      <td>{{comedian.lastname}}</td>
+    {% endfor %}
+
+  </tr>
+</table>
+
+<br>
+
+{% endfor %}
+
+
+
+</div>
+{% endblock %}

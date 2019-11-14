@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load staticfiles %}
+
+
+{% block content %}
+<div align="center" class="container">
+  <h1>Hello</h1>
+  <div class="list-group">
+    <a class="list-group-item list-group-item-action" href="{% url 'manage:comedian_profile' %}">Comedian Profile</a>
+    <a class="list-group-item list-group-item-action" href="{% url 'manage:host_event' %}">Host Event</a>
+  </div>
+</div>
+{% endblock %}

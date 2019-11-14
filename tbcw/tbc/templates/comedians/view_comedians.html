@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+<div class="container" align="center">
+  <a class="btn btn-primary" href="{% url 'comedians:register_comedians' %}">Register</a>
+</div>
+
+<hr><br>
+
+<div class="container">
+  <br>
+  {% for i in all_comedians %}
+    {{i}}
+    <br>
+    <img src="{{ i.profile_pic.url }}" alt="Profile Picture">
+  {% endfor %}
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+1. When the admin gets an email upon new form submission,
+he should get a nicely formatted table of the form. Right now, its unformatted.
+
+2. Try to process sending emails in the background,
+so that user gets through the page quickly without
+having to wait for the email to be sent and then redirected.
+
+3. In the function view_comedians, I am returning all the comedian objects.
+In the Comedians page, all comedians will be displayed but only their picture, name and social media links will be shown.
+Once you click on their picture, all details about them should show up on the same page only instead of redirecting.
+You can use Cards for this!
+
+4. BookMyShow does not have an API! so automating bms links is not an option.
+We need to ask Mani if its the same link that bms has for every show or it keeps changing.
+Depending on that, we could either hardcode the link to book tickets button, or give the admin
+an option to put it for each event.
+
+5. At line 22 in views.py, the profile picture is available to be displayed. Currently
+it is not displayed as preview_profile html page doesn't have a 'img' attribute.
+When you create the front end for preview_profile, you can use this line to get the pic.
+
+6. At comedian_profile.html page, a toggle / tick button can be given to approve a comedian profile.
+Once admin clicks approve, a modal should appear asking for confirmation.
+
+7. Register will appear in list view for commedia profiles, and will be shown as a bubble.
+
+8. Registering for events will be on upcomming events only, this will be specific to an event.

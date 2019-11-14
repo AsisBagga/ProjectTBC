@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load staticfiles %}
+
+
+{% block content %}
+<div class="container">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  <h6>{{ form.firstname.id }}</h6>
+  <br>
+  {% for i in profile_image %}
+    <img src="{{ i.image.url }}" alt="Profile Picture" width="200px">
+  {% endfor %}
+
+
+
+  <br><br>
+  <a class="button" href="{% url 'comedians:preview_profile' %}">Submit</a>
+</div>
+{% endblock %}

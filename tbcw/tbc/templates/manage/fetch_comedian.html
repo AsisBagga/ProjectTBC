@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load bootstrap4 %}
+
+{% block content %}
+<h2>Comedian Details below</h2>
+{% for i in comedian %}
+  {{i.firstname}} {{i.lastname}}
+  <a type="button" href="{% url 'manage:approve_comedian' pk=i.id %}">Approve</a>
+  <a type="button" href="{% url 'manage:reject_comedian' pk=i.id %}">Reject</a>
+{% endfor %}
+{% endblock %}
